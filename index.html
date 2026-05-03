@@ -8,42 +8,33 @@
     <style>
         :root { --bg: #ffffff; --text: #111; --accent: #8b5e3c; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; scroll-behavior: smooth; }
-        
         nav { padding: 25px; text-align: center; position: sticky; top: 0; background: rgba(255,255,255,0.95); z-index: 100; border-bottom: 1px solid #f2f2f2; }
         nav a { margin: 0 20px; text-decoration: none; color: #777; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
         nav a:hover { color: #000; }
 
-        header { text-align: center; padding: 60px 20px; }
-        .lamp { font-size: 45px; filter: sepia(0.5); margin-bottom: 10px; display: block; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; font-weight: 700; }
+        header { text-align: center; padding: 50px 20px; }
+        .lamp { font-size: 45px; filter: sepia(0.5); display: block; margin-bottom: 10px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0; }
 
         .container { max-width: 750px; margin: auto; padding: 0 25px; }
         
-        /* Article Styles */
-        .post { margin-bottom: 100px; }
-        .featured-img { width: 100%; height: 450px; object-fit: cover; border-radius: 0px; filter: contrast(1.1) grayscale(10%); margin-bottom: 40px; }
-        .category { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4px; color: var(--accent); font-weight: bold; display: block; margin-bottom: 15px; }
-        
-        .post h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; line-height: 1.2; margin-bottom: 25px; }
-        .post-content { font-family: 'Lora', serif; font-size: 1.15rem; line-height: 1.9; color: #222; text-align: justify; }
+        .article-hero-img { width: 100%; height: 450px; object-fit: cover; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        /* Buttons & Utility */
-        .delete-btn { 
-            background: #eee; color: #888; border: none; padding: 5px 12px; 
-            font-size: 0.65rem; cursor: pointer; border-radius: 2px;
-            float: right; transition: 0.3s;
-        }
-        .delete-btn:hover { background: #ff4444; color: white; }
+        .post-content { font-family: 'Lora', serif; font-size: 1.15rem; line-height: 1.9; text-align: justify; color: #222; }
+        .category { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4px; color: var(--accent); font-weight: bold; display: block; margin-bottom: 15px; }
+
+        /* Comment Form Section */
+        .comment-box { background: #fafafa; padding: 40px; margin: 60px 0; border: 1px solid #eee; border-radius: 4px; }
+        .comment-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 0; }
+        input, textarea { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; font-family: inherit; box-sizing: border-box; font-size: 0.95rem; }
+        .submit-btn { background: #000; color: #fff; border: none; padding: 18px 30px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; width: 100%; transition: 0.3s; }
+        .submit-btn:hover { background: var(--accent); }
 
         .page-section { display: none; }
         .active { display: block; animation: fadeIn 0.8s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        input, textarea { width: 100%; padding: 18px; margin: 15px 0; border: 1px solid #eee; font-family: inherit; box-sizing: border-box; background: #fafafa; }
-        button.publish-btn { background: #000; color: #fff; border: none; padding: 20px; cursor: pointer; letter-spacing: 3px; width: 100%; text-transform: uppercase; font-size: 0.8rem; }
         
-        footer { text-align: center; padding: 80px 20px; color: #bbb; font-size: 0.7rem; letter-spacing: 1px; border-top: 1px solid #f9f9f9; }
-        a.mail-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+        footer { text-align: center; padding: 80px 20px; color: #bbb; font-size: 0.75rem; border-top: 1px solid #f2f2f2; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -61,50 +52,57 @@
 
 <div class="container">
     
-    <!-- ΑΡΧΙΚΗ ΜΕ ΤΟ ΜΟΝΙΜΟ ΑΡΘΡΟ ΣΟΥ -->
+    <!-- ΑΡΧΙΚΗ ΣΕΛΙΔΑ -->
     <div id="home" class="page-section active">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjEwMjU0NjI0M15BMl5BanBnXkFtZTcwNzYxMTI1MQ@@._V1_.jpg" class="article-hero-img" alt="The Devil Wears Prada">
+
         <article class="post">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200" class="featured-img">
             <span class="category">Κριτική / Sequel</span>
-            <h2>The Devil Wears Prada 2: Μια βραδιά κάτω από την Ακρόπολη</h2>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-top: 10px; line-height: 1.2;">The Devil Wears Prada 2: Μια βραδιά κάτω από την Ακρόπολη</h2>
             
             <div class="post-content">
-                Το χθεσινό βράδυ του σαββάτου είχα την τύχη να παρακολουθώ το νέο "The Devil Wears Prada" στο cine paris της ακρόπολης, και παρά την ψύχρα της βραδιάς, μπορούσες να δεις με πόσο ενθουσιασμό προσέγγιζαν όλη το μεγάλο αυτό sequel. Ακούγονται πολλά από ήρεμους και άγριους φίλους του χολιγουτιανού σινεμά. 
-                <br><br>
-                Κάποιοι λένε ότι αυτή η ταινία είναι άλλη μια απόδηξη, για το πόσο διαφορετικές είναι οι ταινίες των 2020s σε σχέση με των προηγούμενων δεκαετιών, πως, όποιος έκανε το color grading είναι άλλο ένα θύμα του σινεμά της εικόνας "διαφήμισης οδοντόκρεμας". Άλλοι λένε, πως ενώ το κύριο θέμα που μοιάζει να αφορά η ταινία είναι το πόσο μια καπιταλιστική κοινωνία, μοιαζεί να αναιρεί την ανθρώπινη αξία μέσα στις τέχνες, η ίδια η ταινία είναι προϊόν της μεγαλύτερης καπιταλιστικής μηχανής. 
-                <br><br>
-                Η ταινία σίγουρα στηρίχθηκε στην ήδη υπάρχουσα φήμη της, και ενώ θα μπορούσε να έχει επαναπαυτεί, το έκανε λιγότερο απ'ότι θα περίμενε κανείς. Το σενάριο, δεν ακολούθησε κατά γράμμα το τόξο του ρόλο της Miranda Priestley (Meryl Streep), μιας γυναικάς που έδινε πάντοτε μεγάλη έμφαση στη λεπτομέρεια, και στη δεύτερη ταινία φαίνεται να μη θυμόταν την Αντρέα. Δεν έγινε πότε απόλυτα ξεκάθαρο σεναριακά αν όντως την ξέχασε ως παρουσία στην εταιρία της ή όχι. 
-                <br><br>
-                Αυτή να ήταν ίσως και η μόνη φανερά, "αστοχία" σεναριακά, πέρα από την έντονη ανάγκη της Aντρέα να μας εξηγήσει με διάλογο και όχι με κάποιο άλλο μέσο, το πόσο απεχθάνεται την κακομεταχείρηση τον παλαιών κτηριών της Ν. Υόρκης. Κατά το μεγαλύτερο κομμάτι μιλάμε για καυστικούς διαλόγους, που έρεαν μέσα από τις λεπτές ερμηνείες όλων των ηθοποιών, και κυριώς της Emily Blunt, η οποία και σύμφωνα με τη Meryl Streep, μοιάζει να είναι το signature κομμάτι της ταινίας.
+                <p>Το χθεσινό βράδυ του σαββάτου είχα την τύχη να παρακολουθώ το νέο "The Devil Wears Prada" στο cine paris της ακρόπολης, και παρά την ψύχρα της βραδιάς, μπορούσες να δεις με πόσο ενθουσιασμό προσέγγιζαν όλη το μεγάλο αυτό sequel. Ακούγονται πολλά από ήρεμους και άγριους φίλους του χολιγουτιανού σινεμά.</p>
+                
+                <p>Κάποιοι λένε ότι αυτή η ταινία είναι άλλη μια απόδηξη, για το πόσο διαφορετικές είναι οι ταινίες των 2020s σε σχέση με των προηγούμενων δεκαετιών, πως, όποιος έκανε το color grading είναι άλλο ένα θύμα του σινεμά της εικόνας "διαφήμισης οδοντόκρεμας". Άλλοι λένε, πως ενώ το κύριο θέμα που μοιάζει να αφορά η ταινία είναι το πόσο μια καπιταλιστική κοινωνία, μοιαζεί να αναιρεί την ανθρώπινη αξία μέσα στις τέχνες, η ίδια η ταινία είναι προϊόν της μεγαλύτερης καπιταλιστικής μηχανής.</p>
+                
+                <p>Η ταινία σίγουρα στηρίχθηκε στην ήδη υπάρχουσα φήμη της, και ενώ θα μπορούσε να έχει επαναπαυτεί, το έκανε λιγότερο απ'ότι θα περίμενε κανείς. Το σενάριο, δεν ακολούθησε κατά γράμμα το τόξο του ρόλο της Miranda Priestley (Meryl Streep), μιας γυναικάς που έδινε πάντοτε μεγάλη έμφαση στη λεπτομέρεια, και στη δεύτερη ταινία φαίνεται να μη θυμόταν την Αντρέα. Δεν έγινε πότε απόλυτα ξεκάθαρο σεναριακά αν όντως την ξέχασε ως παρουσία στην εταιρία της ή όχι.</p>
+                
+                <p>Αυτή να ήταν ίσως και η μόνη φανερά, "αστοχία" σεναριακά, πέρα από την έντονη ανάγκη της Aντρέα να μας εξηγήσει με διάλογο και όχι με κάποιο άλλο μέσο, το πόσο απεχθάνεται την κακομεταχείρηση τον παλαιών κτηριών της Ν. Υόρκης. Κατά το μεγαλύτερο κομμάτι μιλάμε για καυστικούς διαλόγους, που έρεαν μέσα από τις λεπτές ερμηνείες όλων των ηθοποιών, και κυριώς της Emily Blunt, η οποία και σύμφωνα με τη Meryl Streep, μοιάζει να είναι το signature κομμάτι της ταινίας.</p>
             </div>
         </article>
 
-        <!-- Χώρος για τα προσωρινά άρθρα σου -->
-        <div id="user-posts-container"></div>
+        <!-- ΦΟΡΜΑ ΣΧΟΛΙΩΝ -->
+        <div class="comment-box">
+            <h3>Συζήτηση</h3>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Μοιραστείτε την άποψή σας. Τα σχόλια εμφανίζονται μετά από έγκριση.</p>
+            <form action="https://formspree.io/f/xrejpzoa" method="POST">
+                <input type="text" name="name" placeholder="Όνομα" required>
+                <input type="email" name="email" placeholder="Email (δεν δημοσιεύεται)" required>
+                <textarea name="comment" rows="5" placeholder="Το σχόλιό σας..." required></textarea>
+                <button type="submit" class="submit-btn">Αποστολή Σχολίου</button>
+            </form>
+        </div>
     </div>
 
-    <!-- ΦΟΡΜΑ ΓΡΑΨΙΜΑΤΟΣ -->
+    <!-- ΕΝΟΤΗΤΑ ΓΡΑΨΙΜΑΤΟΣ -->
     <div id="write" class="page-section">
-        <h2 style="font-family: 'Playfair Display', serif;">Νέο Άρθρο</h2>
-        <p style="font-size: 0.8rem; color: #888;">Σημείωση: Τα άρθρα που γράφετε εδώ αποθηκεύονται τοπικά στον περιηγητή σας.</p>
-        <input type="text" id="post-title" placeholder="Τίτλος Άρθρου">
+        <h2 style="font-family: 'Playfair Display';">Νέο Άρθρο</h2>
+        <input type="text" id="post-title" placeholder="Τίτλος">
         <textarea id="post-content-input" rows="10" placeholder="Ξεκινήστε να γράφετε..."></textarea>
-        <button class="publish-btn" onclick="savePost()">Δημοσίευση</button>
+        <button class="submit-btn" onclick="savePost()">Δημοσίευση Τοπικά</button>
+        <div id="user-posts-container" style="margin-top: 50px;"></div>
     </div>
 
-    <!-- ΕΠΙΚΟΙΝΩΝΙΑ -->
+    <!-- ΕΝΟΤΗΤΑ ΕΠΙΚΟΙΝΩΝΙΑΣ -->
     <div id="contact" class="page-section" style="text-align: center; padding-top: 50px;">
-        <h2 style="font-family: 'Playfair Display', serif;">Επικοινωνία</h2>
-        <p>Για προτάσεις, διορθώσεις ή συνεργασίες:</p>
-        <p style="font-size: 1.4rem; margin-top: 30px;">
-            <a href="mailto:krisiliad@gmail.com" class="mail-link">krisiliad@gmail.com</a>
-        </p>
+        <h2 style="font-family: 'Playfair Display';">Επικοινωνία</h2>
+        <p>Email: <a href="mailto:krisiliad@gmail.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid;">krisiliad@gmail.com</a></p>
     </div>
 
 </div>
 
 <footer>
-    &copy; 2026 CineMinimal | Created for the love of Cinema.
+    &copy; 2026 CineMinimal | krisiliad@gmail.com
 </footer>
 
 <script>
@@ -114,44 +112,42 @@
         window.scrollTo(0,0);
     }
 
+    function savePost() {
+        const title = document.getElementById('post-title').value;
+        const content = document.getElementById('post-content-input').value;
+        if(!title || !content) return alert("Συμπληρώστε τα πεδία!");
+        
+        const posts = JSON.parse(localStorage.getItem('myCinePosts')) || [];
+        posts.push({ title, content });
+        localStorage.setItem('myCinePosts', JSON.stringify(posts));
+        
+        document.getElementById('post-title').value = '';
+        document.getElementById('post-content-input').value = '';
+        loadPosts();
+    }
+
     function loadPosts() {
         const posts = JSON.parse(localStorage.getItem('myCinePosts')) || [];
         const container = document.getElementById('user-posts-container');
         container.innerHTML = '';
         posts.forEach((post, index) => {
-            const article = `
-                <article class="post" style="border-top: 1px solid #eee; padding-top: 50px;">
-                    <button class="delete-btn" onclick="deletePost(${index})">Διαγραφή</button>
-                    <span class="category">Προσωπική Σημείωση</span>
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">${post.title}</h2>
-                    <div class="post-content">${post.content}</div>
-                </article>
+            container.innerHTML += `
+                <div style="border-top: 1px solid #eee; padding: 20px 0; position: relative;">
+                    <h3 style="font-family: 'Playfair Display';">${post.title}</h3>
+                    <p style="font-family: 'Lora';">${post.content}</p>
+                    <button onclick="deletePost(${index})" style="color: red; border: none; background: none; cursor: pointer; font-size: 0.7rem;">Διαγραφή</button>
+                </div>
             `;
-            container.insertAdjacentHTML('afterbegin', article);
         });
     }
 
-    function savePost() {
-        const title = document.getElementById('post-title').value;
-        const content = document.getElementById('post-content-input').value;
-        if(!title || !content) return alert("Παρακαλώ συμπληρώστε τίτλο και κείμενο.");
-        const posts = JSON.parse(localStorage.getItem('myCinePosts')) || [];
-        posts.push({ title, content });
+    function deletePost(index) {
+        let posts = JSON.parse(localStorage.getItem('myCinePosts'));
+        posts.splice(index, 1);
         localStorage.setItem('myCinePosts', JSON.stringify(posts));
-        document.getElementById('post-title').value = '';
-        document.getElementById('post-content-input').value = '';
         loadPosts();
-        showSection('home');
     }
 
-    function deletePost(index) {
-        if(confirm("Διαγραφή άρθρου;")) {
-            let posts = JSON.parse(localStorage.getItem('myCinePosts'));
-            posts.splice(index, 1);
-            localStorage.setItem('myCinePosts', JSON.stringify(posts));
-            loadPosts();
-        }
-    }
     loadPosts();
 </script>
 
