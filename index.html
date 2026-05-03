@@ -15,7 +15,7 @@
         .lamp { font-size: 40px; filter: sepia(0.5); }
         h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; }
         .container { max-width: 700px; margin: auto; padding: 0 20px; }
-        .main-img { width: 100%; height: auto; margin-bottom: 40px; }
+        .main-img { width: 100%; height: auto; margin-bottom: 40px; display: block; }
         .post-content { font-family: 'Lora', serif; font-size: 1.1rem; line-height: 1.8; text-align: justify; }
         .category { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); font-weight: bold; }
         .interact { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
@@ -42,7 +42,8 @@
 
 <div class="container">
     <div id="home" class="page-section active">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" class="main-img">
+        <!-- Η ΕΙΚΟΝΑ ΠΟΥ ΜΟΥ ΕΣΤΕΙΛΕΣ -->
+        <img src="https://i.pinimg.com/736x/a2/bb/f4/a2bbf4118dcedaa10b453f1368f2d147.jpg" class="main-img">
 
         <article>
             <span class="category">Κριτική</span>
@@ -75,6 +76,7 @@
         </div>
     </div>
 
+    <!-- Τα υπόλοιπα τμήματα -->
     <div id="write" class="page-section">
         <h2>Νέο Άρθρο</h2>
         <input type="text" id="title" placeholder="Τίτλος">
