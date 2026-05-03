@@ -5,35 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineMinimal</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400&family=Lora:ital@0;1&display=swap" rel="stylesheet">
-    <!-- Lyket Script for Likes -->
     <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_78d5e8f45041490212009230557497"></script>
     <style>
         :root { --bg: #ffffff; --text: #111; --accent: #8b5e3c; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
-        
         nav { padding: 25px; text-align: center; border-bottom: 1px solid #f2f2f2; }
         nav a { margin: 0 20px; text-decoration: none; color: #777; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
-
         header { text-align: center; padding: 60px 20px; }
         .lamp { font-size: 40px; filter: sepia(0.5); }
         h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; }
-
         .container { max-width: 700px; margin: auto; padding: 0 20px; }
-        
-        /* Η ΦΩΤΟΓΡΑΦΙΑ ΣΟΥ */
         .main-img { width: 100%; height: auto; margin-bottom: 40px; }
-
         .post-content { font-family: 'Lora', serif; font-size: 1.1rem; line-height: 1.8; text-align: justify; }
         .category { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); font-weight: bold; }
-
-        /* Like & Comments Area */
         .interact { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
-        .like-box { margin-bottom: 30px; }
-        
         .comment-box { background: #fdfdfd; padding: 30px; border: 1px solid #eee; margin-top: 40px; }
         input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; font-family: inherit; box-sizing: border-box; }
-        .btn { background: #000; color: #fff; border: none; padding: 12px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; width: 100%; }
-
+        .btn { background: #000; color: #fff; border: none; padding: 12px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; width: 100% ; }
         .page-section { display: none; }
         .active { display: block; }
         footer { text-align: center; padding: 60px; color: #bbb; font-size: 0.7rem; }
@@ -53,34 +41,35 @@
 </header>
 
 <div class="container">
-    
     <div id="home" class="page-section active">
-        <!-- Εικόνα από την ταινία -->
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" class="main-img" alt="The Devil Wears Prada Style">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" class="main-img">
 
         <article>
             <span class="category">Κριτική</span>
             <h2 style="font-family: 'Playfair Display'; font-size: 2.2rem; margin: 10px 0;">The Devil Wears Prada 2: Μια βραδιά κάτω από την Ακρόπολη</h2>
             
             <div class="post-content">
-                <p>Το χθεσινό βράδυ του σαββάτου είχα την τύχη να παρακολουθώ το νέο "The Devil Wears Prada" στο cine paris της ακρόπολης...</p>
-                <p>Κατά το μεγαλύτερο κομμάτι μιλάμε για καυστικούς διαλόγους, που έρεαν μέσα από τις λεπτές ερμηνείες όλων των ηθοποιών, και κυριώς της Emily Blunt.</p>
+                <p>Το χθεσινό βράδυ του σαββάτου είχα την τύχη να παρακολουθώ το νέο "The Devil Wears Prada" στο cine paris της ακρόπολης, και παρά την ψύχρα της βραδιάς, μπορούσες να δεις με πόσο ενθουσιασμό προσέγγιζαν όλη το μεγάλο αυτό sequel. Ακούγονται πολλά από ήρεμους και άγριους φίλους του χολιγουτιανού σινεμά.</p>
+                
+                <p>Κάποιoι λένε ότι αυτή η ταινία είναι άλλη μια απόδηξη, για το πόσο διαφορετικές είναι οι ταινίες των 2020s σε σχέση με των προηγούμενων δεκαετιών, πως, όποιος έκανε το color grading είναι άλλο ένα θύμα του σινεμά της εικόνας "διαφήμισης οδοντόκρεμας". Άλλοι λένε, πως ενώ το κύριο θέμα που μοιάζει να αφορά η ταινία είναι το πόσο μια καπιταλιστική κοινωνία, μοιαζεί να αναιρεί την ανθρώπινη αξία μέσα στις τέχνες, η ίδια η ταινία είναι προϊόν της μεγαλύτερης καπιταλιστικής μηχανής.</p>
+                
+                <p>Η ταινία σίγουρα στηρίχθηκε στην ήδη υπάρχουσα φήμη της, και ενώ θα μπορούσε να έχει επαναπαυτεί, το έκανε λιγότερο απ'ότι θα περίμενε κανείς. Το σενάριο, δεν ακολούθησε κατά γράμμα το τόξο του ρόλο της Miranda Priestley (Meryl Streep), μιας γυναικάς που έδινε πάντοτε μεγάλη έμφαση στη λεπτομέρεια, και στη δεύτερη ταινία φαίνεται να μη θυμόταν την Αντρέα. Δεν έγινε πότε απόλυτα ξεκάθαρο σεναριακά αν όντως την ξέχασε ως παρουσία στην εταιρία της ή όχι.</p>
+                
+                <p>Αυτή να ήταν ίσως και η μόνη φανερά, "αστοχία" σεναριακά, πέρα από την έντονη ανάγκη της Aντρέα να μας εξηγήσει με διάλογο και όχι με κάποιο άλλο μέσο, το πόσο απεχθάνεται την κακομεταχείρηση τον παλαιών κτηριών της Ν. Υόρκης. Κατά το μεγαλύτερο κομμάτι μιλάμε για καυστικούς διαλόγους, που έρεαν μέσα από τις λεπτές ερμηνείες όλων των ηθοποιών, και κυριώς της Emily Blunt, η οποία και σύμφωνα με τη Meryl Streep, μοιάζει να είναι το signature κομμάτι της ταινίας.</p>
             </div>
         </article>
 
         <div class="interact">
-            <!-- LIKE BUTTON -->
-            <div class="like-box">
-                <div data-lyket-type="like" data-lyket-id="prada-2" data-lyket-color="#8b5e3c"></div>
+            <div style="margin-bottom: 20px;">
+                <div data-lyket-type="like" data-lyket-id="prada-sequel-final" data-lyket-color="#8b5e3c"></div>
             </div>
 
-            <!-- COMMENT FORM -->
             <div class="comment-box">
-                <h3 style="font-family: 'Playfair Display';">Σχολιάστε</h3>
+                <h3 style="font-family: 'Playfair Display'; margin-top:0;">Σχολιάστε</h3>
                 <form action="https://formspree.io/f/xrejpzoa" method="POST">
-                    <input type="text" name="name" placeholder="Το όνομά σας" required>
-                    <textarea name="message" rows="3" placeholder="Τι σκέφτεστε για την ταινία;" required></textarea>
-                    <button type="submit" class="btn">Δημοσίευση</button>
+                    <input type="text" name="name" placeholder="Όνομα" required>
+                    <textarea name="message" rows="3" placeholder="Γράψτε το σχόλιό σας..." required></textarea>
+                    <button type="submit" class="btn">Αποστολή</button>
                 </form>
             </div>
         </div>
@@ -97,7 +86,6 @@
         <h2>Επικοινωνία</h2>
         <p>Email: krisiliad@gmail.com</p>
     </div>
-
 </div>
 
 <footer>&copy; 2026 CineMinimal</footer>
@@ -106,11 +94,9 @@
     function showSection(id) {
         document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
     }
-
-    function save() {
-        alert("Το άρθρο αποθηκεύτηκε τοπικά!");
-    }
+    function save() { alert("Αποθηκεύτηκε!"); }
 </script>
 
 </body>
